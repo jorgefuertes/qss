@@ -24,6 +24,6 @@ func main() {
 	fmt.Printf("Document root at: %q\n", docroot)
 	fmt.Printf("Listening at: http://localhost:%d\n", port)
 	fmt.Println("Ready")
-	http.ListenAndServe(":8000", http.FileServer(http.Dir(docroot)))
+	http.ListenAndServe(fmt.Sprintf(":%d", port), http.FileServer(http.Dir(docroot)))
 }
 
